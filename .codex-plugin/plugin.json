@@ -1,0 +1,6 @@
+{
+  "name": "privateguard",
+  "version": "0.1.0",
+  "description": "Local privacy scanning, sanitization, encryption, and audit verification tools for MCP-compatible coding agents.",
+  "mcpServers": "./mcp.json"
+}

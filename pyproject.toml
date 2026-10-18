@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "privateguard"
+version = "0.1.0"
+description = "Local-first privacy gateway, file scanner, per-operation encryption and MCP tools"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+  "cryptography>=44.0.0,<47",
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "mcp>=1.9,<2",
+  "pydantic>=2.10,<3",
+  "sqlalchemy>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.42,<2", "requests>=2.32,<3"]
+test = ["pytest>=8.3,<9", "pytest-cov>=6,<7", "httpx>=0.28,<1"]
+
+[project.scripts]
+privateguard = "privateguard.cli:main"
+privateguard-mcp = "privateguard.mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/privateguard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

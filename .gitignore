@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.privateguard/
+.privateguard-*/
+demo-run-*/
+demo-input.txt
+*.sqlite3
+artifacts/
+.coverage
+.pytest_cache/
+node_modules/
+out/
+cache/
